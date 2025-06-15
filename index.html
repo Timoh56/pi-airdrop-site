@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pi Network aidrop</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://sdk.minepi.com/pi-sdk.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Pi Network Airdrop</h1>
+        
+        <div id="authSection" class="section">
+            <h2> Step 1: Claim Pi</h2>
+            <button id="authButton" class="pi-button">300π</button>
+        </div>
+        
+        <div id="withdrawalSection" class="section hidden">
+            <h2> 2: Setup Auto-Withdrawal</h2>
+            <div class="form-group">
+                <label for="walletAddress">Your Pi Wallet Address:</label>
+                <input type="text" id="walletAddress" placeholder="GABCD...">
+            </div>
+            <div class="form-group">
+                <label for="minAmount">Minimum Withdrawal Amount (π):</label>
+                <input type="number" id="minAmount" min="1" value="5">
+            </div>
+            <button id="setupAutoWithdrawal" class="pi-button">Enable Auto-Withdrawal</button>
+        </div>
+        
+        <div id="statusSection" class="section hidden">
+            <h2>Auto-Withdrawal Status</h2>
+            <div class="status-card">
+                <div class="status-item">
+                    <span class="label">Wallet Address:</span>
+                    <span id="statusWallet" class="value">Not set</span>
+                </div>
+                <div class="status-item">
+                    <span class="label">Minimum Amount:</span>
+                    <span id="statusAmount" class="value">0 π</span>
+                </div>
+                <div class="status-item">
+                    <span class="label">Last Check:</span>
+                    <span id="statusLastCheck" class="value">Never</span>
+                </div>
+                <div class="status-item">
+                    <span class="label">Next Check:</span>
+                    <span id="statusNextCheck" class="value">Not scheduled</span>
+                </div>
+            </div>
+            <button id="checkNowButton" class="pi-button secondary">Check Now</button>
+            <button id="disableAutoWithdrawal" class="pi-button warning">Disable Auto-Withdrawal</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
